@@ -33,7 +33,7 @@ pod 'Highlighter'
 github "younatics/Highlighter"
 ```
 
-## Simple Usage
+## Usage
 Set object(`Any`), text (`String`), attributes (`[String : Any]?`). This method will find every text in your `[UILabel]` and highlight them
 ```swift
 Highlighter.highlight(object: Any, at: String, attributes: [String : Any]?)
