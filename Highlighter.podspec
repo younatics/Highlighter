@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Highlighter'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Highlight whatever you want!'
 
   s.description      = <<-DESC
