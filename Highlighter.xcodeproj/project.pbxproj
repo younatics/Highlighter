@@ -48,9 +48,9 @@
 		19DB45C11EBB99B20040865C /* Highlighter */ = {
 			isa = PBXGroup;
 			children = (
+				19DB45CA1EBB99F30040865C /* Highlighter.swift */,
 				19DB45C21EBB99B20040865C /* Highlighter.h */,
 				19DB45C31EBB99B20040865C /* Info.plist */,
-				19DB45CA1EBB99F30040865C /* Highlighter.swift */,
 			);
 			path = Highlighter;
 			sourceTree = "<group>";
