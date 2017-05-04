@@ -10,7 +10,7 @@
 See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.md) for details
 
 ## Intoduction
-🖍 Highlight whatever you want! `Highlighter` will magically find `UILabel`, `UITextView`, `UITextField`, `UIButton` in your `UITableViewCell` or other `Object` and highlight them!
+🖍 Highlight whatever you want! `Highligher` will magically find UI objects such as `UILabel`, `UITextView`, `UITexTfield`, `UIButton` in your `UITableViewCell`.
 
 ![demo](Images/Highlighter.gif)
 
