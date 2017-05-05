@@ -11,6 +11,7 @@ See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.m
 
 ## Intoduction
 🖍 Highlight whatever you want! `Highligher` will magically find UI objects such as `UILabel`, `UITextView`, `UITexTfield`, `UIButton` in your `UITableViewCell` or other `Class`.
+#### See [YNSearch](https://github.com/younatics/YNSearch) for advanced usage
 
 ![demo](Images/Highlighter.gif)
 
@@ -45,7 +46,6 @@ Highlighter.highlight(object: Any, at: String, attributes: [String : Any]?, type
 ```
 
 ## Examples
-#### See [YNSearch](https://github.com/younatics/YNSearch) for advanced usage
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 guard let cell = self.ynSearchListViewDelegate?.ynSearchListView(tableView, cellForRowAt: indexPath) as? SearchViewCell else { return UITableViewCell() }
