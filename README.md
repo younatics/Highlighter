@@ -39,12 +39,12 @@ github "younatics/Highlighter"
 ## Usage
 Set object(`Any`), text (`String`), attributes (`[String : Any]?`). This method will find every text in your `[UILabel]` and highlight them
 ```swift
-Highlighter.highlight(object: Any, at: String, attributes: [String : Any]?)
+Highlighter.highlight(object: Any, at: String, normal: attributes, highlight: attributes)
 ```
 
 or you can also set type(`HighlighterType`)
 ```swift
-Highlighter.highlight(object: Any, at: String, attributes: [String : Any]?, type: HighlighterType)
+Highlighter.highlight(object: Any, at: String, normal: attributes, highlight: attrib, type: HighlighterType)
 ```
 
 ## Examples
@@ -53,7 +53,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 guard let cell = self.ynSearchListViewDelegate?.ynSearchListView(tableView, cellForRowAt: indexPath) as? SearchViewCell else { return UITableViewCell() }
             
   if let changedText = ynSearchTextFieldText {
-    Highlighter.highlight(object: cell, at: changedText, attributes: [NSBackgroundColorAttributeName: UIColor.yellow])
+    Highlighter.highlight(object: cell, at: changedText, normal: nil, highlight: [NSBackgroundColorAttributeName: UIColor.yellow])
     }
   return cell
   }
