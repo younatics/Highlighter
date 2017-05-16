@@ -8,14 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		19DB45C41EBB99B20040865C /* Highlighter.h in Headers */ = {isa = PBXBuildFile; fileRef = 19DB45C21EBB99B20040865C /* Highlighter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19DB45CB1EBB99F30040865C /* Highlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB45CA1EBB99F30040865C /* Highlighter.swift */; };
+		321DDC701ECB5F4100B2805F /* Highlightable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DDC6F1ECB5F4100B2805F /* Highlightable.swift */; };
+		321DDC721ECB5F7E00B2805F /* HighlightableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DDC711ECB5F7E00B2805F /* HighlightableContainer.swift */; };
+		321DDC741ECB5F9300B2805F /* Highlightables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DDC731ECB5F9300B2805F /* Highlightables.swift */; };
+		321DDC761ECB5FAA00B2805F /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DDC751ECB5FAA00B2805F /* NSAttributedString+Extensions.swift */; };
+		321DDC781ECB5FC000B2805F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321DDC771ECB5FC000B2805F /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19DB45BF1EBB99B20040865C /* Highlighter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Highlighter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19DB45C21EBB99B20040865C /* Highlighter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Highlighter.h; sourceTree = "<group>"; };
 		19DB45C31EBB99B20040865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19DB45CA1EBB99F30040865C /* Highlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlighter.swift; sourceTree = "<group>"; };
+		321DDC6F1ECB5F4100B2805F /* Highlightable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlightable.swift; sourceTree = "<group>"; };
+		321DDC711ECB5F7E00B2805F /* HighlightableContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightableContainer.swift; sourceTree = "<group>"; };
+		321DDC731ECB5F9300B2805F /* Highlightables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlightables.swift; sourceTree = "<group>"; };
+		321DDC751ECB5FAA00B2805F /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
+		321DDC771ECB5FC000B2805F /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +56,13 @@
 		19DB45C11EBB99B20040865C /* Highlighter */ = {
 			isa = PBXGroup;
 			children = (
-				19DB45CA1EBB99F30040865C /* Highlighter.swift */,
+				321DDC6F1ECB5F4100B2805F /* Highlightable.swift */,
+				321DDC711ECB5F7E00B2805F /* HighlightableContainer.swift */,
+				321DDC731ECB5F9300B2805F /* Highlightables.swift */,
 				19DB45C21EBB99B20040865C /* Highlighter.h */,
 				19DB45C31EBB99B20040865C /* Info.plist */,
+				321DDC751ECB5FAA00B2805F /* NSAttributedString+Extensions.swift */,
+				321DDC771ECB5FC000B2805F /* String+Extensions.swift */,
 			);
 			path = Highlighter;
 			sourceTree = "<group>";
@@ -136,7 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19DB45CB1EBB99F30040865C /* Highlighter.swift in Sources */,
+				321DDC721ECB5F7E00B2805F /* HighlightableContainer.swift in Sources */,
+				321DDC701ECB5F4100B2805F /* Highlightable.swift in Sources */,
+				321DDC741ECB5F9300B2805F /* Highlightables.swift in Sources */,
+				321DDC761ECB5FAA00B2805F /* NSAttributedString+Extensions.swift in Sources */,
+				321DDC781ECB5FC000B2805F /* String+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
