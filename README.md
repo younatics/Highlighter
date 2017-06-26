@@ -60,6 +60,7 @@ guard let cell = self.ynSearchListViewDelegate?.ynSearchListView(tableView, cell
 
 ## References
 #### Please tell me or make pull request if you use this library in your application :) 
+#### [MotionBook](https://github.com/younatics/MotionBook)
 #### [YNSearch](https://github.com/younatics/YNSearch)
 
 ## Author
