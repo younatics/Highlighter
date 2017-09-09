@@ -68,7 +68,7 @@ guard let cell = self.ynSearchListViewDelegate?.ynSearchListView(tableView, cell
 #### [YNSearch](https://github.com/younatics/YNSearch)
 
 ## Author
-[younatics 🇰🇷](http://younatics.github.io)
+[younatics 🇰🇷](https://twitter.com/younatics)
 
 ## License
 Highlighter is available under the MIT license. See the LICENSE file for more info.
