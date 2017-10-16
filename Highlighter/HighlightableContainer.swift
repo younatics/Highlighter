@@ -16,15 +16,15 @@ public protocol HighlightableContainer: class {
     ///   - normalAttributes: Attributes to apply to non-matching text
     ///   - highlightAttributes: Attributes to apply (highlight) to matching text
     ///   - type: (optional) Only search `Highlightable`s of this type
-    func highlight(text: String, normal normalAttributes: [String : Any]?, highlight highlightAttributes: [String : Any]?, type: Highlightable.Type?)
+    func highlight(text: String, normal normalAttributes: [NSAttributedStringKey : Any]?, highlight highlightAttributes: [NSAttributedStringKey : Any]?, type: Highlightable.Type?)
 }
 
 extension HighlightableContainer {
-    public func highlight(text: String, normal normalAttributes: [String : Any]?, highlight highlightAttributes: [String : Any]?, type: Highlightable.Type? = nil) {
+    public func highlight(text: String, normal normalAttributes: [NSAttributedStringKey : Any]?, highlight highlightAttributes: [NSAttributedStringKey : Any]?, type: Highlightable.Type? = nil) {
         let mirror = Mirror(reflecting: self)
         mirror.children
             .flatMap { $0.value as? Highlightable }
-            .filter { return type == nil || type(of: $0) == type }
+            .filter { return type == nil || Swift.type(of: $0) == type }
             .forEach { $0.highlight(text: text, normal: normalAttributes, highlight: highlightAttributes) }
     }
 }
