@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/Highlighter/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/younatics/Highlighter.svg?branch=master)](https://travis-ci.org/younatics/Highlighter)
 [![Platform](https://img.shields.io/cocoapods/p/Highlighter.svg?style=flat)](http://cocoapods.org/pods/Highlighter)
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.md) for details
