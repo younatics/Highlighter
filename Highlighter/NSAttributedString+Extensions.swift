@@ -9,8 +9,8 @@
 import Foundation
 
 extension NSAttributedString {
-    static func highlight(ranges: [Range<String.Index>], at searchText: String, in originText: String, normal normalAttributes: [String : Any]?, highlight highlightAttributes: [String : Any]?) -> NSAttributedString {
-        let startString = originText.substring(to: ranges[0].lowerBound)
+    static func highlight(ranges: [Range<String.Index>], at searchText: String, in originText: String, normal normalAttributes: [NSAttributedStringKey : Any]?, highlight highlightAttributes: [NSAttributedStringKey : Any]?) -> NSAttributedString {
+        let startString = String(originText[..<ranges[0].lowerBound])
         let highlightString = NSMutableAttributedString(string: startString, attributes: normalAttributes)
 
         if ranges.count == 1 {
@@ -30,21 +30,21 @@ extension NSAttributedString {
         return highlightString
     }
 
-    private static func continueAttribute(originText: String, upperBound: String.Index, lowerBound: String.Index, normalAttributes: [String : Any]?) -> NSMutableAttributedString {
+    private static func continueAttribute(originText: String, upperBound: String.Index, lowerBound: String.Index, normalAttributes: [NSAttributedStringKey : Any]?) -> NSMutableAttributedString {
         let range = Range(uncheckedBounds: (upperBound, lowerBound))
-        let continueString = originText.substring(with: range)
+        let continueString = String(originText[range])
         let continueAttributeString = NSMutableAttributedString(string: continueString, attributes: normalAttributes)
         return continueAttributeString
     }
 
-    private static func containAttribute(originText: String, bound: Range<String.Index>, attributes: [String : Any]?) -> NSMutableAttributedString {
-        let containedString = originText.substring(with: bound)
+    private static func containAttribute(originText: String, bound: Range<String.Index>, attributes: [NSAttributedStringKey : Any]?) -> NSMutableAttributedString {
+        let containedString = String(originText[bound])
         let containedAttributeString = NSMutableAttributedString(string: containedString, attributes: attributes)
         return containedAttributeString
     }
 
-    private static func endAttribute(originText: String, bound: String.Index, normalAttributes: [String : Any]?) -> NSMutableAttributedString {
-        let endString = originText.substring(from: bound)
+    private static func endAttribute(originText: String, bound: String.Index, normalAttributes: [NSAttributedStringKey : Any]?) -> NSMutableAttributedString {
+        let endString = String(originText[bound...])
         let endAttributeString = NSMutableAttributedString(string: endString, attributes: normalAttributes)
         return endAttributeString
     }
