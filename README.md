@@ -18,7 +18,7 @@ See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.m
 
 ## Requirements
 
-`Highlighter` is written in Swift 3. Compatible with iOS 8.0+
+`Highlighter` is written in Swift 4. Compatible with iOS 8.0+
 
 ## Installation
 
