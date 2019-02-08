@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/Highlighter/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/younatics/Highlighter.svg?branch=master)](https://travis-ci.org/younatics/Highlighter)
 [![Platform](https://img.shields.io/cocoapods/p/Highlighter.svg?style=flat)](http://cocoapods.org/pods/Highlighter)
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.md) for details
@@ -18,7 +18,7 @@ See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.m
 
 ## Requirements
 
-`Highlighter` is written in Swift 4. Compatible with iOS 8.0+
+`Highlighter` is written in Swift 4.2. Compatible with iOS 9.0+
 
 ## Installation
 
