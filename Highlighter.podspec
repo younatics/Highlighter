@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Highlighter'
-  s.version          = '1.2.0'
+  s.version          = '1.3.0'
   s.summary          = 'Highlight whatever you want!'
 
   s.description      = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/younatics/Highlighter.git', :tag => s.version.to_s }
   s.source_files     = 'Highlighter/*.swift'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.frameworks = 'Foundation'
   s.requires_arc = true
 end

@@ -12,11 +12,11 @@ public protocol Highlightable: class {
     var textValue: String? { get }
     var attributedTextValue: NSAttributedString? { get set }
 
-    func highlight(text: String, normal normalAttributes: [NSAttributedStringKey : Any]?, highlight highlightAttributes: [NSAttributedStringKey : Any]?)
+    func highlight(text: String, normal normalAttributes: [NSAttributedString.Key : Any]?, highlight highlightAttributes: [NSAttributedString.Key : Any]?)
 }
 
 extension Highlightable {
-    public func highlight(text: String, normal normalAttributes: [NSAttributedStringKey : Any]?, highlight highlightAttributes: [NSAttributedStringKey : Any]?) {
+    public func highlight(text: String, normal normalAttributes: [NSAttributedString.Key : Any]?, highlight highlightAttributes: [NSAttributedString.Key : Any]?) {
         guard let inputText = self.textValue else { return }
 
         let highlightRanges = inputText.lowercased().ranges(of: text)
