@@ -23,7 +23,7 @@ extension HighlightableContainer {
     public func highlight(text: String, normal normalAttributes: [NSAttributedString.Key : Any]?, highlight highlightAttributes: [NSAttributedString.Key : Any]?, type: Highlightable.Type? = nil) {
         let mirror = Mirror(reflecting: self)
         mirror.children
-            .flatMap { $0.value as? Highlightable }
+            .compactMap { $0.value as? Highlightable }
             .filter { return type == nil || Swift.type(of: $0) == type }
             .forEach { $0.highlight(text: text, normal: normalAttributes, highlight: highlightAttributes) }
     }

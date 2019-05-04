@@ -9,11 +9,10 @@
 import Foundation
 
 extension String {
-    func ranges(of string: String, options: CompareOptions = .literal) -> [Range<Index>] {
-        let lowerCaseString = string.lowercased()
+    func ranges(of string: String, options: CompareOptions = .caseInsensitive) -> [Range<Index>] {
         var result: [Range<Index>] = []
         var start = startIndex
-        while let range = range(of: lowerCaseString, options: options, range: start..<endIndex) {
+        while let range = range(of: string, options: options, range: start..<endIndex) {
             result.append(range)
             start = range.upperBound
         }
