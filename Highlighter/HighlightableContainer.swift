@@ -17,6 +17,7 @@ public protocol HighlightableContainer: class {
     ///   - highlightAttributes: Attributes to apply (highlight) to matching text
     ///   - type: (optional) Only search `Highlightable`s of this type
     func highlight(text: String, normal normalAttributes: [NSAttributedString.Key : Any]?, highlight highlightAttributes: [NSAttributedString.Key : Any]?, type: Highlightable.Type?)
+    func unHighlight(type: Highlightable.Type?)
 }
 
 extension HighlightableContainer {
@@ -26,6 +27,14 @@ extension HighlightableContainer {
             .compactMap { $0.value as? Highlightable }
             .filter { return type == nil || Swift.type(of: $0) == type }
             .forEach { $0.highlight(text: text, normal: normalAttributes, highlight: highlightAttributes) }
+    }
+    
+    public func unHighlight(type: Highlightable.Type? = nil) {
+        let mirror = Mirror(reflecting: self)
+        mirror.children
+            .compactMap { $0.value as? Highlightable }
+            .filter { return type == nil || Swift.type(of: $0) == type }
+            .forEach { $0.unHighlight() }
     }
 }
 
