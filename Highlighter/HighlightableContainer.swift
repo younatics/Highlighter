@@ -8,7 +8,8 @@
 
 import UIKit
 
-public protocol HighlightableContainer: class {
+@MainActor
+public protocol HighlightableContainer: AnyObject {
     /// Search any child `Highlightable`s and highlight any matching text with the provided attributes
     ///
     /// - Parameters:

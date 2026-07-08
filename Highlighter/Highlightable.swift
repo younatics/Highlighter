@@ -8,7 +8,8 @@
 
 import Foundation
 
-public protocol Highlightable: class {
+@MainActor
+public protocol Highlightable: AnyObject {
     var textValue: String? { get }
     var attributedTextValue: NSAttributedString? { get set }
 

@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/Highlighter/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/younatics/Highlighter.svg?branch=master)](https://travis-ci.org/younatics/Highlighter)
 [![Platform](https://img.shields.io/cocoapods/p/Highlighter.svg?style=flat)](http://cocoapods.org/pods/Highlighter)
-[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.md) for details
@@ -18,9 +18,25 @@ See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.m
 
 ## Requirements
 
-`Highlighter` is written in Swift 5.0. Compatible with iOS 9.0+
+`Highlighter` is written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
 
 ## Installation
+
+### Swift Package Manager
+
+In Xcode, choose **File ▸ Add Package Dependencies…** and enter:
+
+```
+https://github.com/younatics/Highlighter.git
+```
+
+Or add it to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/younatics/Highlighter.git", from: "2.0.0")
+]
+```
 
 ### Cocoapods
 
