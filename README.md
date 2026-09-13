@@ -1,24 +1,23 @@
 # Highlighter
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-[![Version](https://img.shields.io/cocoapods/v/Highlighter.svg?style=flat)](http://cocoapods.org/pods/Highlighter)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-brightgreen.svg?style=flat)](https://github.com/younatics/Highlighter/blob/master/Package.swift)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Highlighter.svg?style=flat)](https://cocoapods.org/pods/Highlighter)
+[![Platform](https://img.shields.io/badge/platform-iOS%2013%2B-blue.svg?style=flat)](https://github.com/younatics/Highlighter/blob/master/Package.swift)
+[![Swift 6](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://www.swift.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/Highlighter/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/younatics/Highlighter.svg?branch=master)](https://travis-ci.org/younatics/Highlighter)
-[![Platform](https://img.shields.io/cocoapods/p/Highlighter.svg?style=flat)](http://cocoapods.org/pods/Highlighter)
-[![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.md) for details
 
-## Intoduction
-🖍 Highlight whatever you want! `Highlighter` will magically find UI objects such as `UILabel`, `UITextView`, `UITexTfield`, `UIButton` in your `UITableViewCell` or other `Class`.
+## Introduction
+🖍 Highlight whatever you want! `Highlighter` will magically find UI objects such as `UILabel`, `UITextView`, `UITextField`, `UIButton` in your `UITableViewCell` or other `Class`.
 #### See [YNSearch](https://github.com/younatics/YNSearch) for advanced usage
 
 ![demo](Images/Highlighter.gif)
 
 ## Requirements
 
-`Highlighter` is written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
+`Highlighter` requires Swift 6.0 (swift-tools-version 6.0) and iOS 13.0 or later. It supports Swift Package Manager and CocoaPods.
 
 ## Installation
 
@@ -38,29 +37,25 @@ dependencies: [
 ]
 ```
 
-### Cocoapods
+### CocoaPods
 
 Highlighter is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Highlighter'
-```
-### Carthage
-```
-github "younatics/Highlighter"
+pod 'Highlighter', '2.0.0'
 ```
 
 ## Usage
-You can search any `UIView` using `view.highlight(text:normal:highlight:type:)` 
-It will search subviews for the provided `text` and highlight them using the attributes provided.
+You can highlight a `UILabel`, `UITextView`, `UITextField`, or `UIButton` using `highlight(text:normal:highlight:)`.
+When you call `highlight(text:normal:highlight:type:)` on a container such as a custom `UIView` or `UITableViewCell`, Highlighter inspects the container's stored properties and highlights directly stored supported controls. It does not recursively search `UIView.subviews`.
 
-To search _all_ supported subview use:
+To highlight all supported controls stored as properties, use:
 ```swift
 view.highlight(text: "Foo", normal: normalAttributes, highlight: highlightedAttributes)
 ```
 
-or you can limit the search to a single type using:
+Or limit the stored properties to a single control type:
 ```swift
 view.highlight(text: "Foo", normal: normalAttributes, highlight: highlightedAttributes, type: UIButton.self)
 ```
@@ -68,13 +63,12 @@ view.highlight(text: "Foo", normal: normalAttributes, highlight: highlightedAttr
 ## Examples
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-guard let cell = self.ynSearchListViewDelegate?.ynSearchListView(tableView, cellForRowAt: indexPath) as? SearchViewCell else { return UITableViewCell() }
-            
+  guard let cell = self.ynSearchListViewDelegate?.ynSearchListView(tableView, cellForRowAt: indexPath) as? SearchViewCell else { return UITableViewCell() }
+
   if let changedText = ynSearchTextFieldText {
-    cell.highlight(text: changedText, normal: nil, highlight: [NSBackgroundColorAttributeName: UIColor.yellow])
-    }
-  return cell
+    cell.highlight(text: changedText, normal: nil, highlight: [.backgroundColor: UIColor.yellow])
   }
+  return cell
 }
 ```
 
