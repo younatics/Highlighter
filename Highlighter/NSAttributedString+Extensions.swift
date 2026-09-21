@@ -18,9 +18,9 @@ extension NSAttributedString {
             highlightString.append(self.endAttribute(originText: originText, bound: ranges[0].upperBound, normalAttributes: normalAttributes))
 
         } else {
-            for i in 1..<ranges.count {
+            for i in 0..<ranges.count - 1 {
                 highlightString.append(self.containAttribute(originText: originText, bound: ranges[i], attributes: highlightAttributes))
-                highlightString.append(self.continueAttribute(originText: originText, upperBound: ranges[i-1].upperBound, lowerBound: ranges[i].lowerBound, normalAttributes: normalAttributes))
+                highlightString.append(self.continueAttribute(originText: originText, upperBound: ranges[i].upperBound, lowerBound: ranges[i + 1].lowerBound, normalAttributes: normalAttributes))
             }
 
             highlightString.append(self.containAttribute(originText: originText, bound: ranges[ranges.count - 1], attributes: highlightAttributes))
