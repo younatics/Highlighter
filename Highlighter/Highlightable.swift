@@ -14,6 +14,7 @@ public protocol Highlightable: AnyObject {
     var attributedTextValue: NSAttributedString? { get set }
 
     func highlight(text: String, normal normalAttributes: [NSAttributedString.Key : Any]?, highlight highlightAttributes: [NSAttributedString.Key : Any]?)
+    func unHighlight()
 }
 
 extension Highlightable {
@@ -31,5 +32,11 @@ extension Highlightable {
             normal: normalAttributes,
             highlight: highlightAttributes
         )
+    }
+    
+    public func unHighlight() {
+        if let attText = self.attributedTextValue {
+            attributedTextValue = NSAttributedString(string: attText.string)
+        }
     }
 }
