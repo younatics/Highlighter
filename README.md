@@ -17,7 +17,7 @@ See [CHANGELOG](https://github.com/younatics/Highlighter/blob/master/CHANGELOG.m
 
 ## Requirements
 
-`Highlighter` requires Swift 6.0 (swift-tools-version 6.0) and iOS 13.0 or later. It supports Swift Package Manager and CocoaPods.
+`Highlighter` requires Swift 6.0 (swift-tools-version 6.0) and iOS 15.0 or later. It supports Swift Package Manager and CocoaPods.
 
 ## Installation
 
