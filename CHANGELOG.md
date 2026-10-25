@@ -1,4 +1,7 @@
 # Updates
+## [v2.1.1](https://github.com/younatics/Highlighter/releases/tag/2.1.1)
+* A query that matches nothing (or an empty query) now resets the text to the normal attributes instead of leaving the previous highlight on screen
+
 ## [v2.1.0](https://github.com/younatics/Highlighter/releases/tag/2.1.0)
 * Raise the minimum deployment target to iOS 15.0 (Xcode 26/27 no longer build for iOS 13/14)
 

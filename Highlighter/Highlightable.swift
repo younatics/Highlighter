@@ -22,7 +22,12 @@ extension Highlightable {
 
         let highlightRanges = inputText.ranges(of: text)
 
-        guard !highlightRanges.isEmpty else { return }
+        guard !highlightRanges.isEmpty else {
+            // Nothing matches (or the query is empty): show the text with the normal attributes
+            // instead of leaving the previous query's highlight on screen.
+            self.attributedTextValue = NSAttributedString(string: inputText, attributes: normalAttributes)
+            return
+        }
 
         self.attributedTextValue = NSAttributedString.highlight(
             ranges: highlightRanges,

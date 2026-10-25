@@ -41,6 +41,22 @@ final class HighlighterTests: XCTestCase {
         XCTAssertEqual(result.string, origin)
     }
 
+    func testNonMatchingOrEmptyQueryResetsToNormalAttributes() {
+        let label = UILabel()
+        label.text = "hello world"
+        label.highlight(text: "hello", normal: [.foregroundColor: UIColor.black], highlight: [.foregroundColor: UIColor.red])
+        XCTAssertEqual(label.attributedTextValue?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? UIColor, .red)
+
+        // A query that no longer matches must not leave the earlier highlight on screen.
+        label.highlight(text: "zzz", normal: [.foregroundColor: UIColor.black], highlight: [.foregroundColor: UIColor.red])
+        XCTAssertEqual(label.attributedTextValue?.string, "hello world")
+        XCTAssertEqual(label.attributedTextValue?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? UIColor, .black)
+
+        label.highlight(text: "hello", normal: [.foregroundColor: UIColor.black], highlight: [.foregroundColor: UIColor.red])
+        label.highlight(text: "", normal: [.foregroundColor: UIColor.black], highlight: [.foregroundColor: UIColor.red])
+        XCTAssertEqual(label.attributedTextValue?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? UIColor, .black)
+    }
+
     func testUILabelHighlightAppliesHighlightColorToMatches() {
         let label = UILabel()
         label.text = "hello world hello"
